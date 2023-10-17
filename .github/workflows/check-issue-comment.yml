@@ -15,9 +15,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check issue comment
         uses: actions/github-script@v6
+        env:
+            ISSUE_COMMENT: ${{ github.event.comment.body }}
         with:
           script: |
-            const comment="${{ github.event.comment.body }}"
+            const comment=process.env.ISSUE_COMMENT
             if (comment.startsWith('octocat')) {
               console.log("Issue comment starts with 'octocat'")
             } else {
