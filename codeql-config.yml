@@ -1,3 +1,5 @@
+queries:
+  - uses: ./codeql-custom-queries-javascript/improper-aws-credentials.ql
 packs:
   # Use the latest version of 'codeql-javascript' published by 'advanced-security'
   - advanced-security/codeql-javascript
